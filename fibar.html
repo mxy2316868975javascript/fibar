@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fibar</title>
+	<style>
+	* {margin: 0;padding: 0;}
+	ul,li {list-style: none;}
+
+	body {font-size: 60px;color: #4ebaff;font-family: '微软雅黑'}
+	.main {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%); width: 400px;height: 200px;background: #4ebaff;}
+	.main ul {height: 70px;margin: 65px 30px;display: flex;justify-content:space-between;}
+	.main ul li {float: left; width: 70px;height: 70px;line-height: 70px; background: #ffc148;text-align: center;}
+	</style>
+</head>
+<body>
+	<div class='main'>
+		<ul>
+			<li>4</li>
+			<li>4</li>
+			<li>4</li>
+			<li>4</li>
+		</ul>
+	</div>
+
+	<script>
+	var arrayobj = ['a','b','1','3','a','3'];
+	var aLi = document.getElementsByTagName('li');
+	//去重
+	function unique(arr)
+	{
+		var new_arr = [];
+		for(var i=0;i<arrayobj.length;i++)
+		{
+			if(new_arr.indexOf(arr[i]) == -1)
+			{
+				new_arr.push(arr[i]);
+			}
+		}
+		return new_arr;
+	}
+	//判断是否为数组
+	console.log(unique(arrayobj) instanceof Array);
+	//打印数组
+	console.log(unique(arrayobj));
+	//便利数组
+	for(var i=0;i<unique(arrayobj).length;i++)
+	{
+		aLi[i].innerHTML = unique(arrayobj)[i]
+	}
+	</script>
+</body>
+</html>
